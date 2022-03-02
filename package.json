@@ -1,0 +1,25 @@
+{
+  "name": "full_stack_node.js_doc",
+  "version": "1.0.0",
+  "description": "A documentation website for building webapps with node.js and express",
+  "main": "app.js",
+  "scripts": {
+    "start-dev": "cross-env PORT=3000 nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoKay83/Full_stack_Node.js_Doc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayoKay83/Full_stack_Node.js_Doc/issues"
+  },
+  "homepage": "https://github.com/ayoKay83/Full_stack_Node.js_Doc#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.3"
+  }
+}
