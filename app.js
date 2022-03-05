@@ -6,8 +6,9 @@ app.use(express.static("public"));
 const fs = require("fs");
 
 // -- Components --
-const nav = fs.readFileSync("./public/components/nav.html").toString();
-const footer = fs.readFileSync("./public/components/footer.html").toString();
+const head = fs.readFileSync("./public/components/head/head.html").toString();
+const header = fs.readFileSync("./public/components/header/header.html").toString();
+const footer = fs.readFileSync("./public/components/footer/footer.html").toString();
 
 // -- Pages --
 const frontPage = fs.readFileSync("./public/pages/frontpage/frontpage.html").toString();
@@ -17,11 +18,11 @@ const restapiPage = fs.readFileSync("./public/pages/restapi/restapi.html").toStr
 const ssrPage = fs.readFileSync("./public/pages/ssr/ssr.html").toString();
 
 // -- Components + Pages
-const completeFrontPage = nav + frontPage + footer;
-const completeJavascriptPage = nav + javascriptPage + footer;
-const completeToolsPage = nav + toolsPage + footer;
-const completeRestapiPage = nav + restapiPage + footer;
-const completeSsrPage = nav + ssrPage + footer;
+const completeFrontPage = head + header + frontPage + footer;
+const completeJavascriptPage = head + header + javascriptPage + footer;
+const completeToolsPage = head + header + toolsPage + footer;
+const completeRestapiPage = head + header + restapiPage + footer;
+const completeSsrPage = head + header + ssrPage + footer;
 
 app.get("/", (req, res) => {
     res.send(completeFrontPage);
