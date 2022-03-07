@@ -1,13 +1,88 @@
 <section>
-<h3></h3>    
-<p>JavaScript was introduced in 1995 and has since become "the language of the web”.</p>
-<br></br>
-<h3>Variables</h3>
-<p>Variables are symbolic names that creates a binding to a value. It dosn’t actually contain the value itself since you can have several variables that points to the same value. It’s just a representation. We can identify a variable by giving it a meaningful name also called a variable identifier.</p>
-<br></br>
-<h3>Declarations</h3>
-<p>Iste veritatis nam dolorum ipsam quibusdam. Asperiores, repudiandae animi labore atque tempora eos a dolore excepturi, qui recusandae nam facilis itaque incidunt doloremque dicta tempore, aperiam distinctio? Mollitia, cupiditate minima.</p>
-<br></br>
-<h3>Hoisting</h3>
+<h3>What is REST?</h3>    
+<p>REST stand for Representational State Transfer and is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.
+</p>
+<p>The following is an example of how to setup your HTTP methods in your Node router or controller.</p>
+<h3>GET</h3>
+<pre><code class="language-javascript">
+    //GET all movies
+    app.get("/movies", (req, res) => {
+        res.send(movies);
+    });
+    
+    //GET movie by id
+    app.get('/movies/:id', (req, res) => {
+        const {id} = req.params;
+    
+        const foundMovie = movies.find((movie) => movie.id === id);
+    
+        res.send(foundMovie);
+    });</code></pre>
+<p>Next let's make a POST request</p>
+<h3>POST</h3>
+<pre><code class="language-javascript">
+        //CREATE new movie
+        app.post('/movies', (req, res) => {
+            const movie = req.body;
+        
+            //id is generated with the uiid module
+            const id = uuidv4();
+        
+            //if we want to generate our own id...
+            //prefixed notation with ++ in front we increment imidiately
+            //movie.id = ++id;
+        
+            const movieWithId = {id: id, ...movie}
+        
+            movies.push(movieWithId);
+            
+            res.send(`Movie with the title ${movieWithId.title} added to the API`);
+        });</code></pre>
+<h3>PUT</h3>
+<pre><code class="language-javascript">
+    //UPDATE entire movie object
+app.put('/movies/:id', (req, res) => {
+    const {id} = req.params;
+
+    const {title, description, year, imdbScore} = req.body;
+
+    const movieToBeUpdated = movies.find((movie) => movie.id === id);
+
+    movieToBeUpdated.title = title;
+    movieToBeUpdated.description = description;
+    movieToBeUpdated.year = year;
+    movieToBeUpdated.imdbScore = imdbScore;
+    
+    res.send(movieToBeUpdated);
+});
+</code></pre>
+<h3>PATCH</h3>
+<pre><code class="language-javascript">
+    //UPDATE specific properties of one movie 
+app.patch('/movies/:id', (req, res) => {
+    const {id} = req.params;
+
+    const {title, description, year, imdbScore} = req.body;
+
+    const movieToBeUpdated = movies.find((movie) => movie.id === id);
+
+    if (title) { movieToBeUpdated.title = title; }
+    if (description) { movieToBeUpdated.description = description; }
+    if (year) { movieToBeUpdated.year = year; }
+    if (imdbScore) { movieToBeUpdated.imdbScore = imdbScore; }
+
+    res.send(movieToBeUpdated);
+});
+</code></pre>
+<h3>DELETE</h3>
+<pre><code class="language-javascript">//DELETE movie by id
+    app.delete('/movies/:id', (req, res) => {
+        const {id} = req.params;
+    
+        movies = movies.filter((movie) => movie.id !== id);
+        
+        res.send(`Movie with the id ${id} has been deleted.`);
+    });</code></pre>
+
 </section>
 <script src="/components/prismjs/prism.js"></script>
