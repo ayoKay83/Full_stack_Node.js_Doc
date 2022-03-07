@@ -1,1 +1,64 @@
-<script src="/public/components/prismjs/prism.js"></script>
+<section>
+<h3>Node.js</h3>    
+<p>Node.js is a JavaScript runtime environment that runs on Googles V8 engine - an opensource JavaScript engine. It allows you to parse, compile and execute your JS code on the server and make asynchronous operations while running on a single thread.  
+    For more info on the benefits of Server Side Rendering see SSR.</p>
+<p>Node.js can be installed with an installer or a package manager. Visit the Node.js <a href="https://www.nodejs.org">webpage</a> for further instructions on how to install. </p>    
+<h3>npm</h3>
+<p>npm stands for node package manager and is the world's largest software registry. As the name refers to npm let’s you install and manage code packages from the registry and enables programmers around the world to share their software. NPM automatically comes with the installation of Node.Js.
+    Use this command to install a package.</p>
+<pre><code class="language-javascript">npm install [package_name]</code></pre> 
+<h3>package.json</h3>
+<p>All npm packages comes with a package.json file.
+    The main purposes of this file is to:</p>
+<p>1. Deliver metadata about the package such as name, version and entry point/main file.</p>
+<p>2. Manage dependencies.</p>
+<p>3. Constitute a build tool by enabling you to write custom scripts to run CLI commands.</p>
+<h3>Nodemon</h3>
+<p>Before we move on to setting up a project let’s install Nodemon.
+    Nodemon is a utility that makes up a great tool for development by automatically restarting your server whenever you make changes to your source code. </p>
+<p>Install nodemon globally:</p>
+<pre><code class="language-javascript">npm install -g nodemon</code></pre>
+<p>Now you are able to run your application in development with the command: </p>
+<pre><code class="language-javascript">nodemon app.js</code></pre>
+<h3>Project setup</h3>
+<p>This is one way to get started with a new node project and hook it up with Git and GitHub assuming you already have Git installed and a GitHub account.
+    Setup a new repository on GitHub. Remember to include at least the gitIgnore file. Copy the repository URL and go to your terminal.
+    Navigate to the folder where you want to keep your project and clone the project from GitHub</p> 
+<pre><code class="language-javascript">git clone URL_TO_REPOSTIRORY </code></pre> 
+<p>Navigate into the repository and initialize it as an npm package</p>
+<pre><code class="language-javascript">npm init</code></pre> 
+<p>This will take you through some guided steps in the terminal asking you to fill out name of the package, version etc. 
+    Important information if you are planning on releasing your software. If not don’t worry too much about it. 
+    Most elements can be autofilled and all of the information goes into the package.json file, that is created in your repository after finishing the steps. </p>
+<h3>Express</h3>
+<p>Express is a popular Node framework with lots utilities for web app development and HTTP utility methods making it easy to set up an API. 
+    Install Express locally in your repository with npm: </p>
+    <pre><code class="language-javascript">npm install express</code></pre> 
+<p>Now you are ready to start coding.</p> 
+<h3>app.js</h3>
+<p>Create a file called app.js in your repositorys root folder, 
+    and let's set up an Express server.</p>
+<pre><code class="language-javascript">
+    //imports express
+    const express = require("express");
+    const app = express();
+    
+    //body-parser middleware that recognizes all incoming Request 
+    //Objects as JSON Objects 
+    app.use(express.json());
+    
+    //A get method that takes an endpoint and a callback function as arguments 
+    //and responds with a message 
+    app.get("/", (req, res) => {
+        res.send({ message: "Hello World! This is my first Express route" });
+    });
+    
+    //binds and listens the connection on port 8080 and prints a message 
+    //depending on whether the connection is there or not
+    app.listen(8080, (error) => {
+        if (error) console.log("Error in server setup")
+        console.log("Server is running on port", 8080); 
+     });
+    </code></pre>
+</section>
+    <script src="/components/prismjs/prism.js"></script>

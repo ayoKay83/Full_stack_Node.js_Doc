@@ -1,0 +1,46 @@
+
+header, section {
+    display: block;
+    max-width: 900px;
+    margin: auto;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;  
+
+    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-right: 2px;
+    padding-bottom: 0.5em;
+    padding-left: 2px;
+}
+
+h1, h2, h3, h4 {
+    margin: 1em 0 .3em;
+    margin-top: 1em;
+    margin-right: 0px;
+    margin-bottom: 0.3em;
+    margin-left: 0px; 
+}
+
+p {
+    margin: 1em 0;
+    margin-top: 1em;
+    margin-right: 0px;
+    margin-bottom: 1em;
+    margin-left: 0px;
+}
+
+pre[class*="language-"] {
+    margin: .5em 0;
+    margin-top: 0.5em;
+    margin-right: 0px;
+    margin-bottom: 0.5em;
+    margin-left: 0px;   
+}
+
+footer {
+    background-color: rgb(242, 242, 242);
+    padding: 10px 20px;
+}
+

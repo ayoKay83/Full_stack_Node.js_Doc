@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+//behøver jeg express.json for at body parse?
 app.use(express.static("public"));
 
 const fs = require("fs");
