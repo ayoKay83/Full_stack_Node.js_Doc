@@ -1,4 +1,87 @@
-<section>
-    <img src="">
+<style type="text/css">
+ /* * {
+    border : solid 1px pink;
+    }*/
+            body {
+                margin: 0 auto;
+                max-width: 700px;
+                font-family: sans-serif;
+                
+            }
+            time {
+                float: right;
+                color: grey;
+            }
+    
+            h1 {
+                border-bottom: solid thin red;
+                padding: 0.25rem;
+            }
+    
+    
+    
+    .banner {
+    font-family : sans-serif;
+    color : white;
+    background-color : black;
+    }
+    
+    
+    nav ul {
+    display : grid;
+    /*2 kolonner lige store*/
+    grid-template-columns : auto auto;
+    /*fjerner bullets*/
+    list-style : none;
+    /*fjerner auto padding*/
+    padding : 0;
+    }	
+
+    .feature-box {
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.feature-box li {
+    background-color: ivory;
+    margin: 2em;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: larger;
+
+}
+li {
+    display: inline-block;
+    margin-right: 20px; /*20px fra margen til første block*/
+/*}
+
+
+    
+    /* tjek object-fit til billeder + img tag*/
+    
+    </style>	
+    
+<main>
+    <section class="banner">
+    <h1>AyoLearning</h1>
+    <h5>How to make web apps with Node.js</h5>
+    <p>
+        by Ayo <time>2022-03-08</time>
+    </p>
 </section>
-<script src="/public/components/prismjs/prism.js"></script>
+    <!-- Tjek om du bruger nav tag i global css -->
+    <section class="feature-box">
+    <nav class="nav-cards">
+    <ul>
+    <li class="javaScript"><a href="./../javascript/javascript.html"><strong>JavaScript</strong></a></li>
+    <li class="tools"><strong>Tools & Installs</strong></li>
+    <li class="restapi"><strong>Rest API</strong></li>
+    <li class="ssr"><strong>SSR</strong></li>
+    </ul>
+    </nav>
+</section>
+    </main>
+    </body>
+<script src="/components/prismjs/prism.js"></script>

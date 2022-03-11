@@ -38,6 +38,14 @@ pre[class*="language-"] {
     margin-bottom: 0.5em;
     margin-left: 0px;   
 }
+.picture {
+    background-image: url("../pages/frontpage/IMG_1186_2.jpg");
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 500px;
+    height: 600px;
+}
 
 footer {
     background-color: rgb(242, 242, 242);
